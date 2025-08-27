@@ -1,3 +1,7 @@
+/* ======================== 
+   Variables
+   ======================== */
+
 :root {
   --color-primary: #151511;
   --color-primary-content: #fefdfb;
@@ -7,7 +11,7 @@
   --color-base-300: #e6e6e6;
   --color-base-content: #151511;
 
-  --content-width: 296px;
+  --content-width: 18.5rem;
 }
 
 body.dark {
@@ -20,59 +24,14 @@ body.dark {
   --color-base-content: #fefdfb;
 }
 
-#theme-toggle {
-  all: unset;
-  opacity: 50%;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px;
-}
+/* ======================== 
+   Resets & Globals
+   ======================== */
 
-#theme-toggle:hover {
-  opacity: 100%;
-}
-
-#theme-toggle svg {
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.dark #sun-icon {
-  display: none;
-}
-
-.dark #moon-icon {
-  display: block;
-}
-
-#moon-icon {
-  display: none;
-}
-
-#sun-icon {
-  display: block;
-}
-
-#tsparticles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
-  min-width: 100vw;
-  z-index: -100;
-}
-
-body,
-h1,
-h2,
-p,
-ul {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 p {
@@ -112,6 +71,30 @@ h2 {
   letter-spacing: 0.1rem;
 }
 
+ul {
+  width: 18.5rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+/* ======================== 
+   Layout
+   ======================== */
+
+header {
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: end;
+  padding: 0.5rem;
+}
+
 body main {
   width: var(--content-width);
   overflow: hidden;
@@ -122,23 +105,9 @@ body main {
   justify-content: center;
 }
 
-.profile-picture {
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-#profile {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  justify-content: center;
-}
-
 footer {
   text-align: center;
-  padding: 8px;
+  padding: 0.5rem;
   font-weight: 400;
   display: flex;
   flex-direction: column;
@@ -154,19 +123,81 @@ footer a {
   color: inherit;
   font-weight: 600;
 }
+/* ======================== 
+   Components
+   ======================== */
+#theme-toggle {
+  all: unset;
+  opacity: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.125rem;
+}
+#theme-toggle:hover {
+  opacity: 100%;
+}
+
+#theme-toggle svg {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.dark #sun-icon {
+  display: none;
+}
+
+.dark #moon-icon {
+  display: block;
+}
+
+#moon-icon {
+  display: none;
+}
+
+#sun-icon {
+  display: block;
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: -100;
+}
+
+.profile-picture {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#profile {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
 
 #description {
-  margin-top: 32px;
+  margin-top: 2rem;
   text-align: justify;
 }
 
 #cta {
   width: 100%;
-  max-width: 296px;
-  margin-top: 32px;
+  max-width: 18.5rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -175,28 +206,8 @@ footer a {
   opacity: 90%;
 }
 
-header {
-  width: 100%;
-}
-
-nav {
-  display: flex;
-  justify-content: end;
-  padding: 8px;
-}
-
 #cta .button {
   width: 100%;
-}
-
-ul {
-  width: 296px;
-  margin-top: 16px;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  gap: 16px;
-  justify-content: space-between;
 }
 
 .button {
@@ -207,11 +218,11 @@ ul {
   background-color: var(--color-primary);
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   cursor: pointer;
   color: var(--color-primary-content);
-  padding: 8px 16px;
-  border: 1px solid var(--color-primary-content);
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid var(--color-primary-content);
 }
 
 .button:hover {
@@ -229,7 +240,7 @@ ul {
 .button-outline {
   color: var(--color-base-content);
   background-color: var(--color-base-100);
-  border: 1px solid var(--color-base-content);
+  border: 0.0625rem solid var(--color-base-content);
 }
 
 .button-outline:hover {
@@ -237,15 +248,19 @@ ul {
   color: var(--color-base-100);
 }
 
+/* ======================== 
+   Media Queries
+   ======================== */
+
 /* Medium */
 @media (width >= 48rem) {
   :root {
-    --content-width: 375px;
+    --content-width: 23.4375rem;
   }
 
   .profile-picture {
-    width: 192px;
-    height: 192px;
+    width: 12rem;
+    height: 12rem;
   }
 
   h1 {
@@ -266,19 +281,19 @@ ul {
   }
 
   ul {
-    margin-bottom: 64px;
+    margin-bottom: 4rem;
   }
 }
 
 /* Large */
 @media (width >= 64rem) {
   :root {
-    --content-width: 500px;
+    --content-width: 31.25rem;
   }
 
   .profile-picture {
-    width: 224px;
-    height: 224px;
+    width: 14rem;
+    height: 14rem;
   }
 
   h1 {
@@ -290,13 +305,13 @@ ul {
   }
 
   ul {
-    margin-top: 16px;
-    margin-bottom: 128px;
+    margin-top: 1rem;
+    margin-bottom: 8rem;
   }
 
   #description {
     font-size: 1.2rem;
-    margin-top: 48px;
-    margin-bottom: 32px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
   }
 }
